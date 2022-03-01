@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TravelOfUs.DAL.Entities
+namespace Patika.DAL.Entities
 {
-    internal class Reservation
+    public class Reservation
     {
+
     }
 }

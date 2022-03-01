@@ -1,8 +1,11 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Patika.DAL.DbContexts;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,9 +15,16 @@ namespace Patika.WebUI
 {
     public class Startup
     {
+        IConfiguration configuration;
+        public Startup(IConfiguration _configuration)
+        {
+            configuration = _configuration;
+        }
         public void ConfigureServices(IServiceCollection services) //Projelerimizde kullanacaðýmýz servisleri kullanacaðýmýz alandýr.
         {
             services.AddControllersWithViews(); //Mvc'nin iskeletini eklemiþ olduk. Ýlk eklenecek servislerdendir.
+            services.AddControllersWithViews();
+            services.AddDbContext<SqlContext>(opt => opt.UseSqlServer(configuration.GetConnectionString("Patika1")));
         }
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env) //Bir isteðin cevaba dönüþme hattýdýr.Pipeline(Boru Hattý) ismi verilir. Sýralamasý önemlidir.
         {

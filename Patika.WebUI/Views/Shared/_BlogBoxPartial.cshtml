@@ -1,4 +1,5 @@
 ﻿@model Blog
+    
 <article class="media tm-margin-b-20 tm-media-1">
     <img src="@Model.BlogPictures.FirstOrDefault().Path" alt="Image">
     <div class="media-body tm-media-body-1 tm-media-body-v-center">
@@ -9,5 +10,6 @@
             @Model.Detail
         </p>
         <span>@Model.RecDate.ToString("MMM dd yyyy")</span>
+        <a asp-controller="Blog" asp-action="Detail">Detaylar...</a>
     </div>
 </article>

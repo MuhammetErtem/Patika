@@ -18,13 +18,12 @@ namespace Patika.DAL.Entities
         [Column(TypeName = "varchar(150)"), Display(Name = "Açıklama"), StringLength(150)]
         public string Description { get; set; }
 
-        [Column(TypeName = "varchar(150)"), Display(Name = "Resim Dosyası"), StringLength(150)]
-        public string Picture { get; set; }
-
         [Column(TypeName = "text"), Display(Name = "Blog Detayı")]
         public string Detail { get; set; }
 
         [Display(Name = "Kayıt Tarihi")]
         public DateTime RecDate { get; set; }
+        public List<BlogPicture> BlogPictures { get; set; }
+
     }
 }

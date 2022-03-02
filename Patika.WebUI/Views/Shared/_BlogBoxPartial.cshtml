@@ -1,0 +1,13 @@
+﻿@model Blog
+<article class="media tm-margin-b-20 tm-media-1">
+    <img src="@Model.BlogPictures.FirstOrDefault().Path" alt="Image">
+    <div class="media-body tm-media-body-1 tm-media-body-v-center">
+        <h3 class="tm-font-semibold tm-article-title-3">@Model.Title</h3>
+        <p>
+            @Model.Description
+            <br><br>
+            @Model.Detail
+        </p>
+        <span>@Model.RecDate.ToString("MMM dd yyyy")</span>
+    </div>
+</article>

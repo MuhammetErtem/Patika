@@ -19,6 +19,7 @@ namespace Patika.DAL.DbContexts
         public DbSet<Contact> Contact { get; set; }
         public DbSet<Country> Country { get; set; }
         public DbSet<Blog> Blog { get; set; }
+        public DbSet<BlogPicture> BlogPicture { get; set; }
 
         public DbSet<PortfolioPicture> PortfolioPicture { get; set; }
 

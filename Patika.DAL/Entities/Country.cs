@@ -15,6 +15,8 @@ namespace Patika.DAL.Entities
 
         [Column(TypeName = "varchar(50)"), Display(Name = "Ad"), StringLength(50)]
         public string Name { get; set; }
+        [Column(TypeName = "varchar(150)"), Display(Name = "Blog Foroğrafı"), StringLength(150), Required(ErrorMessage = "Fotoğraf Alanı Boş Geçilemez...")]
+        public string Path { get; set; }
         public ICollection<Portfolio> Portfolios { get; set; }
 
 

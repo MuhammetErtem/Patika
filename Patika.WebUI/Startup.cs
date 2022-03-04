@@ -23,7 +23,6 @@ namespace Patika.WebUI
         public void ConfigureServices(IServiceCollection services) //Projelerimizde kullanacaðýmýz servisleri kullanacaðýmýz alandýr.
         {
             services.AddControllersWithViews(); //Mvc'nin iskeletini eklemiþ olduk. Ýlk eklenecek servislerdendir.
-            services.AddControllersWithViews();
             services.AddDbContext<SqlContext>(opt => opt.UseSqlServer(configuration.GetConnectionString("Patika1")));
         }
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env) //Bir isteðin cevaba dönüþme hattýdýr.Pipeline(Boru Hattý) ismi verilir. Sýralamasý önemlidir.

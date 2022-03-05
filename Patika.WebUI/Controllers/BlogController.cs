@@ -21,8 +21,8 @@ namespace Patika.WebUI.Controllers
             return View();
         }
 
-        [Route("/blog/{Title}-{id}")]
-        public IActionResult Detail(string title, int id)
+        [Route("/blog/{title}-{id}")] //Hepsinin küçük harf olması gerekiyor 
+        public IActionResult Detail(string title, int id) // üstteki ile 
         {
 
             Blog blog = db.Blog.Include(i => i.BlogPictures).FirstOrDefault(x => x.ID == id) ?? null;
